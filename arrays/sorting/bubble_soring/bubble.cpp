@@ -7,6 +7,7 @@ using namespace std;
 //function prototype
 void sortBubble(int arr[], int n);
 void swap(int *a, int *b);
+void sortBubbleImproved(int arr[], int n);
 
 // main function
 int main() {
@@ -22,7 +23,7 @@ int main() {
         cin >> arr[i];
     }
     
-    sortBubble(arr, n);
+    sortBubbleImproved(arr, n);
     
     printf("Sorted Array:\n");
     
@@ -44,7 +45,29 @@ void sortBubble(int arr[], int n){
             }
         }
     }
+    
+}
 
+
+//improved version
+// we are adding the new flag to check if is array already sorted.
+void sortBubbleImproved(int arr[], int n){
+    int swapped = 1;
+    int count = 0;
+    
+    for(int i=0; i< n && swapped; i++) {
+        swapped = 0;
+        count++;
+        for (int j=0; j < n-i-1; j++) {
+            if(arr[j] > arr[j+1] ) {
+                swapped = 1;
+                count++;
+                swap(&arr[j], &arr[j+1]);
+            }
+        }
+    }
+    printf("Total loop Count %d\n", count);
+    
 }
 
 void swap(int *a, int *b) {
