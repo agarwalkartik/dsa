@@ -1,0 +1,4 @@
+#1 Rotate the array by N
+#2 Reversal algorithm for array rotation
+#3 Block swap algorithm for array rotation
+#4 Program to cyclically rotate an array by one
